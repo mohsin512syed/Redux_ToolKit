@@ -4,9 +4,12 @@ const userSlice = createSlice({
     name : "user",
     initialState:[],
     reducers:{
-        addUser(){},
+        addUser(state , action){
+            state.push(action.payload);
+        },
         removeUser(){},
         deleteUser(){},
     }
 })
 export default userSlice;
+export const {addUser}=userSlice.actions;
