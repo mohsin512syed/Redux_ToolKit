@@ -4,14 +4,15 @@ import styled from "styled-components";
 import { fakeUserData } from "../api";
 import { useDispatch } from "react-redux";
 import { addUser } from "../store/slice/UserSlice";
+import  DisplayUser from "../components/DisplayUser" 
 
 const UserDetails = () => {
 
   const dispatch = useDispatch()
   const addNewUser = (name) => {
-     console.log(name);
-     dispatch(addUser(name))
+    dispatch(addUser(name))
   }
+
   return (
     <Wrapper>
       <div className="content">
@@ -20,8 +21,7 @@ const UserDetails = () => {
           <button className="btn add-btn" onClick={() => addNewUser(fakeUserData())}>Add New Users</button>
         </div>
         <ul>
-          {/* <li>Hi</li>
-          <li>Hii</li> */}
+          <DisplayUser/>
         </ul>
         <hr />
         <DeleteAllUser />
